@@ -1,103 +1,157 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Periódico Express</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-        body {font-family: Arial, sans-serif; margin:0; padding:0; background:#f4f4f4;}
-        header {background:#222; color:white; padding:20px 0; text-align:center;}
-        header h1 {margin:0;}
-        nav {background:#333; display:flex; justify-content:center;}
-        nav a {color:white; padding:14px 20px; text-decoration:none;}
-        nav a:hover {background:#555;}
-        .section {max-width:1200px; margin:20px auto; padding:0 20px;}
-        .news {background:white; padding:15px; margin-bottom:15px; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,0.1);}
-        .news img {max-width:100%; border-radius:8px;}
-        footer {background:#222; color:white; text-align:center; padding:15px 0; margin-top:20px;}
-        .ads {text-align:center; margin:20px 0;}
-    </style>
-
-    <!-- Google AdSense -->
-    <script data-ad-client="ca-pub-8304147426201412" async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Noticias Express JJ</title>
+<meta name="description" content="Últimas noticias de España y el mundo. Deportes, tecnología, salud y entretenimiento al instante.">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+    body {font-family: 'Roboto', sans-serif; margin:0; padding:0; background-color:#f4f4f4;}
+    header {background: linear-gradient(90deg,#ff6f61,#ff856d); color:white; padding:30px 20px; text-align:center;}
+    header h1 {margin:0;font-size:2.5em;}
+    nav {background:#333; display:flex; justify-content:center; flex-wrap:wrap;}
+    nav a {color:white; padding:14px 20px; text-decoration:none; font-weight:bold;}
+    nav a:hover {background:#575757; transition:0.3s;}
+    .container {max-width:1200px; margin:auto; padding:20px;}
+    .section-title {margin:30px 0 10px;font-size:1.8em;color:#333;border-bottom:2px solid #ff6f61;display:inline-block;}
+    .news-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px;}
+    .news-card {background:white; border-radius:10px; overflow:hidden; box-shadow:0 4px 15px rgba(0,0,0,0.1); transition:transform 0.3s;}
+    .news-card:hover {transform:translateY(-5px);}
+    .news-card img {width:100%; height:180px; object-fit:cover;}
+    .news-card h3 {margin:10px 15px 5px; font-size:1.2em; color:#333;}
+    .news-card p {margin:0 15px 10px; color:#555; font-size:0.95em; line-height:1.4;}
+    .footer {background:#222;color:white;text-align:center;padding:20px;margin-top:40px;}
+    @media (max-width:768px){header h1{font-size:2em;}}
+</style>
 </head>
 <body>
 
 <header>
-    <h1>Periódico Express</h1>
-    <p>Noticias recientes de España y el mundo</p>
+    <h1>Noticias Express JJ</h1>
+    <p>Últimas noticias de España y del mundo al instante</p>
 </header>
 
 <nav>
-    <a href="#politica">Política</a>
+    <a href="#espana">España</a>
+    <a href="#internacional">Internacional</a>
     <a href="#deportes">Deportes</a>
     <a href="#tecnologia">Tecnología</a>
+    <a href="#salud">Salud</a>
+    <a href="#entretenimiento">Entretenimiento</a>
 </nav>
 
-<div class="section" id="politica">
-    <h2>Política</h2>
+<div class="container">
 
-    <div class="news">
-        <h3>España aprueba nuevas medidas económicas</h3>
-        <img src="https://via.placeholder.com/800x400.png?text=Política" alt="Política">
-        <p>El gobierno ha aprobado un paquete de medidas para estimular la economía...</p>
+    <!-- España -->
+    <h2 id="espana" class="section-title">España</h2>
+    <div class="news-grid">
+        <div class="news-card">
+            <img src="https://via.placeholder.com/400x200.png?text=España+1" alt="España 1">
+            <h3>Título noticia España 1</h3>
+            <p>Resumen breve de la noticia 1 en España para captar la atención del lector.</p>
+        </div>
+        <div class="news-card">
+            <img src="https://via.placeholder.com/400x200.png?text=España+2" alt="España 2">
+            <h3>Título noticia España 2</h3>
+            <p>Resumen breve de la noticia 2 en España con información clave y atractiva.</p>
+        </div>
+        <div class="news-card">
+            <img src="https://via.placeholder.com/400x200.png?text=España+3" alt="España 3">
+            <h3>Título noticia España 3</h3>
+            <p>Resumen breve de la noticia 3 en España para enganchar al lector y generar clics.</p>
+        </div>
     </div>
 
-    <div class="ads">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-8304147426201412"
-             data-ad-slot="1111111111"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    <!-- Internacional -->
+    <h2 id="internacional" class="section-title">Internacional</h2>
+    <div class="news-grid">
+        <div class="news-card">
+            <img src="https://via.placeholder.com/400x200.png?text=Internacional+1" alt="Internacional 1">
+            <h3>Título noticia Internacional 1</h3>
+            <p>Resumen breve de la noticia internacional 1.</p>
+        </div>
+        <div class="news-card">
+            <img src="https://via.placeholder.com/400x200.png?text=Internacional+2" alt="Internacional 2">
+            <h3>Título noticia Internacional 2</h3>
+            <p>Resumen breve de la noticia internacional 2.</p>
+        </div>
     </div>
+
+    <!-- Deportes -->
+    <h2 id="deportes" class="section-title">Deportes</h2>
+    <div class="news-grid">
+        <div class="news-card">
+            <img src="https://via.placeholder.com/400x200.png?text=Deportes+1" alt="Deportes 1">
+            <h3>Título noticia Deportes 1</h3>
+            <p>Resumen de la noticia deportiva 1.</p>
+        </div>
+        <div class="news-card">
+            <img src="https://via.placeholder.com/400x200.png?text=Deportes+2" alt="Deportes 2">
+            <h3>Título noticia Deportes 2</h3>
+            <p>Resumen de la noticia deportiva 2.</p>
+        </div>
+    </div>
+
+    <!-- Tecnología -->
+    <h2 id="tecnologia" class="section-title">Tecnología</h2>
+    <div class="news-grid">
+        <div class="news-card">
+            <img src="https://via.placeholder.com/400x200.png?text=Tech+1" alt="Tech 1">
+            <h3>Título noticia Tecnología 1</h3>
+            <p>Resumen de la noticia tecnológica 1.</p>
+        </div>
+        <div class="news-card">
+            <img src="https://via.placeholder.com/400x200.png?text=Tech+2" alt="Tech 2">
+            <h3>Título noticia Tecnología 2</h3>
+            <p>Resumen de la noticia tecnológica 2.</p>
+        </div>
+    </div>
+
+    <!-- Salud -->
+    <h2 id="salud" class="section-title">Salud</h2>
+    <div class="news-grid">
+        <div class="news-card">
+            <img src="https://via.placeholder.com/400x200.png?text=Salud+1" alt="Salud 1">
+            <h3>Título noticia Salud 1</h3>
+            <p>Resumen de la noticia de salud 1.</p>
+        </div>
+        <div class="news-card">
+            <img src="https://via.placeholder.com/400x200.png?text=Salud+2" alt="Salud 2">
+            <h3>Título noticia Salud 2</h3>
+            <p>Resumen de la noticia de salud 2.</p>
+        </div>
+    </div>
+
+    <!-- Entretenimiento -->
+    <h2 id="entretenimiento" class="section-title">Entretenimiento</h2>
+    <div class="news-grid">
+        <div class="news-card">
+            <img src="https://via.placeholder.com/400x200.png?text=Entretenimiento+1" alt="Entretenimiento 1">
+            <h3>Título noticia Entretenimiento 1</h3>
+            <p>Resumen de la noticia de entretenimiento 1.</p>
+        </div>
+        <div class="news-card">
+            <img src="https://via.placeholder.com/400x200.png?text=Entretenimiento+2" alt="Entretenimiento 2">
+            <h3>Título noticia Entretenimiento 2</h3>
+            <p>Resumen de la noticia de entretenimiento 2.</p>
+        </div>
+    </div>
+
 </div>
 
-<div class="section" id="deportes">
-    <h2>Deportes</h2>
-
-    <div class="news">
-        <h3>Fútbol: Gran victoria de España</h3>
-        <img src="https://via.placeholder.com/800x400.png?text=Deportes" alt="Deportes">
-        <p>La selección española de fútbol consiguió una victoria histórica en el partido de ayer...</p>
-    </div>
-
-    <div class="ads">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-8304147426201412"
-             data-ad-slot="2222222222"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
-</div>
-
-<div class="section" id="tecnologia">
-    <h2>Tecnología</h2>
-
-    <div class="news">
-        <h3>Lanzamiento del último smartphone revolucionario</h3>
-        <img src="https://via.placeholder.com/800x400.png?text=Tecnología" alt="Tecnología">
-        <p>La compañía ha lanzado un nuevo dispositivo con características nunca antes vistas...</p>
-    </div>
-
-    <div class="ads">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-8304147426201412"
-             data-ad-slot="3333333333"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
-</div>
-
-<footer>
-    <p>&copy; 2025 Periódico Express. Todos los derechos reservados.</p>
+<footer class="footer">
+    <p>&copy; 2025 Noticias Express JJ. Todos los derechos reservados.</p>
+    <p>Publicidad: <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="pub-8304147426201412"
+         data-ad-slot="1234567890"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script></p>
 </footer>
 
 </body>
