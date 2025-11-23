@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Periódico Express</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        body {font-family: 'Roboto', sans-serif; margin:0; padding:0; background:#f4f4f4;}
+        header {background:#1a73e8; color:white; padding:20px 0; text-align:center;}
+        header h1 {margin:0; font-size:2.5em;}
+        nav {background:#333; display:flex; justify-content:center; flex-wrap:wrap;}
+        nav a {color:white; padding:14px 20px; text-decoration:none; display:block; font-weight:bold;}
+        nav a:hover {background:#575757; transition:0.3s;}
+        .container {max-width:1200px; margin:auto; padding:20px;}
+        .section-title {font-size:1.8em; margin:20px 0; color:#333;}
+        .articles {display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:20px;}
+        .article {background:white; border-radius:10px; overflow:hidden; box-shadow:0 3px 10px rgba(0,0,0,0.1);}
+        .article img {width:100%; height:200px; object-fit:cover;}
+        .article-content {padding:15px;}
+        .article-content h3 {margin:0 0 10px 0; color:#1a73e8;}
+        .article-content p {color:#555; line-height:1.5;}
+        footer {background:#222; color:white; text-align:center; padding:20px 0; margin-top:40px;}
+        @media(max-width:768px){nav a{padding:10px; font-size:0.9em;}}
+    </style>
+</head>
+<body>
+<header>
+    <h1>Periódico Express</h1>
+    <p>Últimas noticias de España y el mundo</p>
+</header>
+<nav>
+    <a href="#politica">Política</a>
+    <a href="#deportes">Deportes</a>
+    <a href="#tecnologia">Tecnología</a>
+    <a href="#cultura">Cultura</a>
+    <a href="#economia">Economía</a>
+</nav>
+
+<div class="container" id="politica">
+    <h2 class="section-title">Política</h2>
+    <div class="articles">
+        <div class="article">
+            <img src="https://via.placeholder.com/400x200.png?text=Política+1" alt="Política 1">
+            <div class="article-content">
+                <h3>Gobierno anuncia nuevas medidas económicas</h3>
+                <p>El gobierno ha presentado hoy un paquete de medidas para reactivar la economía tras la crisis. Se espera que estas medidas impacten positivamente en el empleo y el consumo...</p>
+            </div>
+        </div>
+        <div class="article">
+            <img src="https://via.placeholder.com/400x200.png?text=Política+2" alt="Política 2">
+            <div class="article-content">
+                <h3>Debate sobre reforma educativa continúa</h3>
+                <p>Los partidos políticos siguen debatiendo la reforma educativa. Se discuten cambios en la formación del profesorado y actualización de los planes de estudio...</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="deportes">
+    <h2 class="section-title">Deportes</h2>
+    <div class="articles">
+        <div class="article">
+            <img src="https://via.placeholder.com/400x200.png?text=Deportes+1" alt="Deportes 1">
+            <div class="article-content">
+                <h3>Fútbol: Campeonato nacional llega a la final</h3>
+                <p>Los equipos finalistas del campeonato nacional de fútbol se enfrentarán este fin de semana. Se espera un lleno total en los estadios y gran cobertura mediática...</p>
+            </div>
+        </div>
+        <div class="article">
+            <img src="https://via.placeholder.com/400x200.png?text=Deportes+2" alt="Deportes 2">
+            <div class="article-content">
+                <h3>Atleta español gana medalla internacional</h3>
+                <p>Un joven atleta español ha ganado la medalla de oro en la competición internacional de atletismo, marcando un hito histórico para el país...</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="tecnologia">
+    <h2 class="section-title">Tecnología</h2>
+    <div class="articles">
+        <div class="article">
+            <img src="https://via.placeholder.com/400x200.png?text=Tecnología+1" alt="Tecnología 1">
+            <div class="article-content">
+                <h3>Lanzamiento de nuevo smartphone revolucionario</h3>
+                <p>La empresa tecnológica líder ha presentado su nuevo smartphone con funciones de inteligencia artificial avanzada y diseño innovador...</p>
+            </div>
+        </div>
+        <div class="article">
+            <img src="https://via.placeholder.com/400x200.png?text=Tecnología+2" alt="Tecnología 2">
+            <div class="article-content">
+                <h3>Avances en energías renovables</h3>
+                <p>Los científicos han desarrollado una nueva tecnología de paneles solares más eficientes que prometen reducir costos y aumentar la producción de energía limpia...</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="cultura">
+    <h2 class="section-title">Cultura</h2>
+    <div class="articles">
+        <div class="article">
+            <img src="https://via.placeholder.com/400x200.png?text=Cultura+1" alt="Cultura 1">
+            <div class="article-content">
+                <h3>Exposición de arte contemporáneo en Madrid</h3>
+                <p>Una nueva exposición de arte contemporáneo ha abierto sus puertas, mostrando obras innovadoras de artistas emergentes y consagrados...</p>
+            </div>
+        </div>
+        <div class="article">
+            <img src="https://via.placeholder.com/400x200.png?text=Cultura+2" alt="Cultura 2">
+            <div class="article-content">
+                <h3>Festival de cine internacional</h3>
+                <p>El festival de cine internacional trae películas premiadas y nuevas producciones de todo el mundo. Se esperan invitados famosos y charlas con directores...</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="economia">
+    <h2 class="section-title">Economía</h2>
+    <div class="articles">
+        <div class="article">
+            <img src="https://via.placeholder.com/400x200.png?text=Economía+1" alt="Economía 1">
+            <div class="article-content">
+                <h3>Informe económico trimestral revela crecimiento</h3>
+                <p>El informe económico trimestral publicado por el banco central indica un crecimiento sostenido en varios sectores clave, con perspectivas positivas para los próximos meses...</p>
+            </div>
+        </div>
+        <div class="article">
+            <img src="https://via.placeholder.com/400x200.png?text=Economía+2" alt="Economía 2">
+            <div class="article-content">
+                <h3>Mercados bursátiles experimentan volatilidad</h3>
+                <p>Los mercados bursátiles han mostrado volatilidad en la última semana debido a cambios en las políticas internacionales y anuncios corporativos...</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Periódico Express. Todos los derechos reservados.</p>
+</footer>
+</body>
+          </html>
