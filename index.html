@@ -1,158 +1,284 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Noticias Express JJ</title>
-<meta name="description" content="Últimas noticias de España y el mundo. Deportes, tecnología, salud y entretenimiento al instante.">
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-    body {font-family: 'Roboto', sans-serif; margin:0; padding:0; background-color:#f4f4f4;}
-    header {background: linear-gradient(90deg,#ff6f61,#ff856d); color:white; padding:30px 20px; text-align:center;}
-    header h1 {margin:0;font-size:2.5em;}
-    nav {background:#333; display:flex; justify-content:center; flex-wrap:wrap;}
-    nav a {color:white; padding:14px 20px; text-decoration:none; font-weight:bold;}
-    nav a:hover {background:#575757; transition:0.3s;}
-    .container {max-width:1200px; margin:auto; padding:20px;}
-    .section-title {margin:30px 0 10px;font-size:1.8em;color:#333;border-bottom:2px solid #ff6f61;display:inline-block;}
-    .news-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px;}
-    .news-card {background:white; border-radius:10px; overflow:hidden; box-shadow:0 4px 15px rgba(0,0,0,0.1); transition:transform 0.3s;}
-    .news-card:hover {transform:translateY(-5px);}
-    .news-card img {width:100%; height:180px; object-fit:cover;}
-    .news-card h3 {margin:10px 15px 5px; font-size:1.2em; color:#333;}
-    .news-card p {margin:0 15px 10px; color:#555; font-size:0.95em; line-height:1.4;}
-    .footer {background:#222;color:white;text-align:center;padding:20px;margin-top:40px;}
-    @media (max-width:768px){header h1{font-size:2em;}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Periódico Express JJ</title>
+  <meta name="description" content="Periódico Express JJ — Noticias de España, internacional, economía, tecnología, cultura y más. Información seria y actualizada.">
+
+  <!-- Google AdSense -->
+  <script data-ad-client="ca-pub-8304147426201412" async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;500&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f8f8f8;
+      color: #333;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    header {
+      background: #222;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-family: 'Merriweather', serif;
+      font-size: 2.8em;
+    }
+    header p {
+      margin: 5px 0 0;
+      font-size: 1.1em;
+    }
+
+    nav {
+      background: #333;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      padding: 12px 20px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover {
+      background: #444;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .section-title {
+      font-family: 'Merriweather', serif;
+      font-size: 1.8em;
+      margin: 40px 0 20px;
+      border-bottom: 3px solid #222;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .news-card {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s;
+    }
+    .news-card:hover {
+      transform: translateY(-4px);
+    }
+    .news-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .news-card-content {
+      padding: 15px;
+    }
+    .news-card-content h3 {
+      margin: 0 0 10px;
+      font-size: 1.3em;
+      color: #222;
+    }
+    .news-card-content p {
+      margin: 0;
+      font-size: 0.95em;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    .ads {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 60px;
+    }
+    footer p {
+      margin: 0;
+      font-size: 0.9em;
+    }
+  </style>
 </head>
 <body>
 
-<header>
-    <h1>Noticias Express JJ</h1>
-    <p>Últimas noticias de España y del mundo al instante</p>
-</header>
+  <header>
+    <h1>Periódico Express JJ</h1>
+    <p>Noticias serias de España, economía, tecnología y cultura</p>
+  </header>
 
-<nav>
+  <nav>
     <a href="#espana">España</a>
     <a href="#internacional">Internacional</a>
-    <a href="#deportes">Deportes</a>
+    <a href="#economia">Economía</a>
     <a href="#tecnologia">Tecnología</a>
-    <a href="#salud">Salud</a>
-    <a href="#entretenimiento">Entretenimiento</a>
-</nav>
+    <a href="#cultura">Cultura</a>
+  </nav>
 
-<div class="container">
+  <div class="container">
 
-    <!-- España -->
+    <!-- Sección España -->
     <h2 id="espana" class="section-title">España</h2>
     <div class="news-grid">
-        <div class="news-card">
-            <img src="https://via.placeholder.com/400x200.png?text=España+1" alt="España 1">
-            <h3>Título noticia España 1</h3>
-            <p>Resumen breve de la noticia 1 en España para captar la atención del lector.</p>
+      <div class="news-card">
+        <img src="https://via.placeholder.com/600x400.png?text=España+1" alt="España noticia 1">
+        <div class="news-card-content">
+          <h3>Medidas económicas para pymes aprobadas hoy</h3>
+          <p>El gobierno ha anunciado un nuevo paquete de apoyo para pequeñas y medianas empresas con incentivos fiscales y subvenciones directas.</p>
         </div>
-        <div class="news-card">
-            <img src="https://via.placeholder.com/400x200.png?text=España+2" alt="España 2">
-            <h3>Título noticia España 2</h3>
-            <p>Resumen breve de la noticia 2 en España con información clave y atractiva.</p>
+      </div>
+      <div class="news-card">
+        <img src="https://via.placeholder.com/600x400.png?text=España+2" alt="España noticia 2">
+        <div class="news-card-content">
+          <h3>Alta participación en elecciones locales</h3>
+          <p>El 78% del censo ha acudido a votar en las elecciones municipales, marcando un récord de participación.</p>
         </div>
-        <div class="news-card">
-            <img src="https://via.placeholder.com/400x200.png?text=España+3" alt="España 3">
-            <h3>Título noticia España 3</h3>
-            <p>Resumen breve de la noticia 3 en España para enganchar al lector y generar clics.</p>
-        </div>
+      </div>
     </div>
 
-    <!-- Internacional -->
+    <div class="ads">
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-8304147426201412"
+        data-ad-slot="1111111111"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Sección Internacional -->
     <h2 id="internacional" class="section-title">Internacional</h2>
     <div class="news-grid">
-        <div class="news-card">
-            <img src="https://via.placeholder.com/400x200.png?text=Internacional+1" alt="Internacional 1">
-            <h3>Título noticia Internacional 1</h3>
-            <p>Resumen breve de la noticia internacional 1.</p>
+      <div class="news-card">
+        <img src="https://via.placeholder.com/600x400.png?text=Internacional+1" alt="Internacional noticia 1">
+        <div class="news-card-content">
+          <h3>Cumbre mundial sobre cambio climático concluye con acuerdos clave</h3>
+          <p>Tras varios días de negociaciones, los países firmantes han acordado metas más ambiciosas sobre reducción de emisiones.</p>
         </div>
-        <div class="news-card">
-            <img src="https://via.placeholder.com/400x200.png?text=Internacional+2" alt="Internacional 2">
-            <h3>Título noticia Internacional 2</h3>
-            <p>Resumen breve de la noticia internacional 2.</p>
+      </div>
+      <div class="news-card">
+        <img src="https://via.placeholder.com/600x400.png?text=Internacional+2" alt="Internacional noticia 2">
+        <div class="news-card-content">
+          <h3>Tensiones geopolíticas aumentan en la región del Pacífico</h3>
+          <p>Varios países han mostrado preocupación por los recientes movimientos militares en la zona, generando alarma internacional.</p>
         </div>
+      </div>
     </div>
 
-    <!-- Deportes -->
-    <h2 id="deportes" class="section-title">Deportes</h2>
+    <div class="ads">
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-8304147426201412"
+        data-ad-slot="2222222222"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Sección Economía -->
+    <h2 id="economia" class="section-title">Economía</h2>
     <div class="news-grid">
-        <div class="news-card">
-            <img src="https://via.placeholder.com/400x200.png?text=Deportes+1" alt="Deportes 1">
-            <h3>Título noticia Deportes 1</h3>
-            <p>Resumen de la noticia deportiva 1.</p>
+      <div class="news-card">
+        <img src="https://via.placeholder.com/600x400.png?text=Econom%C3%ADa+1" alt="Economía noticia 1">
+        <div class="news-card-content">
+          <h3>Mercados bursátiles muestran recuperación</h3>
+          <p>Tras semanas de caída, los índices principales han mostrado un repunte gracias a la confianza renovada de los inversores.</p>
         </div>
-        <div class="news-card">
-            <img src="https://via.placeholder.com/400x200.png?text=Deportes+2" alt="Deportes 2">
-            <h3>Título noticia Deportes 2</h3>
-            <p>Resumen de la noticia deportiva 2.</p>
+      </div>
+      <div class="news-card">
+        <img src="https://via.placeholder.com/600x400.png?text=Econom%C3%ADa+2" alt="Economía noticia 2">
+        <div class="news-card-content">
+          <h3>Aumenta el salario mínimo en España</h3>
+          <p>El gobierno ha aprobado un incremento del salario mínimo interprofesional para el próximo año, beneficiando a miles de trabajadores.</p>
         </div>
+      </div>
     </div>
 
-    <!-- Tecnología -->
+    <div class="ads">
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-8304147426201412"
+        data-ad-slot="3333333333"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Sección Tecnología -->
     <h2 id="tecnologia" class="section-title">Tecnología</h2>
     <div class="news-grid">
-        <div class="news-card">
-            <img src="https://via.placeholder.com/400x200.png?text=Tech+1" alt="Tech 1">
-            <h3>Título noticia Tecnología 1</h3>
-            <p>Resumen de la noticia tecnológica 1.</p>
+      <div class="news-card">
+        <img src="https://via.placeholder.com/600x400.png?text=Tecnolog%C3%ADa+1" alt="Tecnología noticia 1">
+        <div class="news-card-content">
+          <h3>IA puntera desarrollada por empresa española</h3>
+          <p>La nueva inteligencia artificial promete mejorar la eficiencia en el sector industrial con algoritmos avanzados.</p>
         </div>
-        <div class="news-card">
-            <img src="https://via.placeholder.com/400x200.png?text=Tech+2" alt="Tech 2">
-            <h3>Título noticia Tecnología 2</h3>
-            <p>Resumen de la noticia tecnológica 2.</p>
+      </div>
+      <div class="news-card">
+        <img src="https://via.placeholder.com/600x400.png?text=Tecnolog%C3%ADa+2" alt="Tecnología noticia 2">
+        <div class="news-card-content">
+          <h3>Innovación en energía renovable: paneles inteligentes</h3>
+          <p>Los nuevos paneles solares con sensores automáticos optimizan la producción energética según la luz y el clima.</p>
         </div>
+      </div>
     </div>
 
-    <!-- Salud -->
-    <h2 id="salud" class="section-title">Salud</h2>
+    <div class="ads">
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-8304147426201412"
+        data-ad-slot="4444444444"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Sección Cultura -->
+    <h2 id="cultura" class="section-title">Cultura</h2>
     <div class="news-grid">
-        <div class="news-card">
-            <img src="https://via.placeholder.com/400x200.png?text=Salud+1" alt="Salud 1">
-            <h3>Título noticia Salud 1</h3>
-            <p>Resumen de la noticia de salud 1.</p>
+      <div class="news-card">
+        <img src="https://via.placeholder.com/600x400.png?text=Cultura+1" alt="Cultura noticia 1">
+        <div class="news-card-content">
+          <h3>Gran exposición de arte contemporáneo en Madrid</h3>
+          <p>Una nueva galería abrirá sus puertas con obras de artistas emergentes y consagrados en un espacio moderno.</p>
         </div>
-        <div class="news-card">
-            <img src="https://via.placeholder.com/400x200.png?text=Salud+2" alt="Salud 2">
-            <h3>Título noticia Salud 2</h3>
-            <p>Resumen de la noticia de salud 2.</p>
+      </div>
+      <div class="news-card">
+        <img src="https://via.placeholder.com/600x400.png?text=Cultura+2" alt="Cultura noticia 2">
+        <div class="news-card-content">
+          <h3>Festival de música clásica reunirá a grandes maestros</h3>
+          <p>El festival contará con orquestas internacionales y conciertos al aire libre en emblemáticos auditorios.</p>
         </div>
+      </div>
     </div>
 
-    <!-- Entretenimiento -->
-    <h2 id="entretenimiento" class="section-title">Entretenimiento</h2>
-    <div class="news-grid">
-        <div class="news-card">
-            <img src="https://via.placeholder.com/400x200.png?text=Entretenimiento+1" alt="Entretenimiento 1">
-            <h3>Título noticia Entretenimiento 1</h3>
-            <p>Resumen de la noticia de entretenimiento 1.</p>
-        </div>
-        <div class="news-card">
-            <img src="https://via.placeholder.com/400x200.png?text=Entretenimiento+2" alt="Entretenimiento 2">
-            <h3>Título noticia Entretenimiento 2</h3>
-            <p>Resumen de la noticia de entretenimiento 2.</p>
-        </div>
-    </div>
+  </div>
 
-</div>
-
-<footer class="footer">
-    <p>&copy; 2025 Noticias Express JJ. Todos los derechos reservados.</p>
-    <p>Publicidad: <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="pub-8304147426201412"
-         data-ad-slot="1234567890"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script></p>
-</footer>
+  <footer class="footer">
+    <p>&copy; 2025 Periódico Express JJ. Todos los derechos reservados.</p>
+  </footer>
 
 </body>
 </html>
