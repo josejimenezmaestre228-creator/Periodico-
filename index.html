@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Periódico Express JJ</title>
-  <meta name="description" content="Periódico Express JJ — Noticias de España, internacional, economía, tecnología, cultura y más. Información seria y actualizada.">
+  <meta name="description" content="Periódico Express JJ — Noticias de política, economía, tecnología, cultura, deportes y más. Información seria y actualizada." />
 
   <!-- Google AdSense -->
   <script data-ad-client="ca-pub-8304147426201412" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;500&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@300;400;500&display=swap');
 
     body {
       margin: 0;
       padding: 0;
-      background: #f8f8f8;
+      background: #f2f2f2;
       color: #333;
       font-family: 'Roboto', sans-serif;
     }
 
     header {
-      background: #222;
+      background: #1a1a1a;
       color: white;
-      padding: 20px;
+      padding: 30px 20px;
       text-align: center;
     }
     header h1 {
@@ -35,6 +35,7 @@
     header p {
       margin: 5px 0 0;
       font-size: 1.1em;
+      font-weight: 300;
     }
 
     nav {
@@ -59,11 +60,82 @@
       padding: 20px;
     }
 
+    .featured {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .featured .main-article {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .featured .main-article img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    .featured .main-article .content {
+      padding: 20px;
+    }
+    .featured .main-article h2 {
+      margin-top: 0;
+      font-size: 1.9em;
+      font-family: 'Merriweather', serif;
+      color: #222;
+    }
+    .featured .main-article p {
+      line-height: 1.6;
+      color: #555;
+      margin: 15px 0;
+    }
+
+    .side-articles {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .side-article {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      display: flex;
+    }
+    .side-article img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .side-article .text {
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .side-article h3 {
+      margin: 0;
+      font-size: 1.2em;
+      color: #1a1a1a;
+    }
+    .side-article p {
+      margin: 10px 0 0;
+      font-size: 0.95em;
+      color: #666;
+      flex-grow: 1;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
     .section-title {
       font-family: 'Merriweather', serif;
       font-size: 1.8em;
-      margin: 40px 0 20px;
-      border-bottom: 3px solid #222;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #1a1a1a;
       display: inline-block;
       padding-bottom: 5px;
     }
@@ -73,31 +145,30 @@
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 25px;
     }
-
     .news-card {
       background: white;
       border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
       transition: transform 0.3s;
     }
     .news-card:hover {
-      transform: translateY(-4px);
+      transform: translateY(-5px);
     }
     .news-card img {
       width: 100%;
       height: 180px;
       object-fit: cover;
     }
-    .news-card-content {
+    .news-card .content {
       padding: 15px;
     }
-    .news-card-content h3 {
+    .news-card .content h3 {
       margin: 0 0 10px;
       font-size: 1.3em;
-      color: #222;
+      color: #1a1a1a;
     }
-    .news-card-content p {
+    .news-card .content p {
       margin: 0;
       font-size: 0.95em;
       line-height: 1.6;
@@ -110,15 +181,19 @@
     }
 
     footer {
-      background: #222;
+      background: #1a1a1a;
       color: white;
       text-align: center;
       padding: 20px 0;
       margin-top: 60px;
     }
     footer p {
-      margin: 0;
+      margin: 5px 0;
       font-size: 0.9em;
+    }
+
+    @media (max-width: 800px) {
+      .featured { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -126,7 +201,7 @@
 
   <header>
     <h1>Periódico Express JJ</h1>
-    <p>Noticias serias de España, economía, tecnología y cultura</p>
+    <p>Noticias actualizadas con rigor y profesionalidad</p>
   </header>
 
   <nav>
@@ -135,141 +210,147 @@
     <a href="#economia">Economía</a>
     <a href="#tecnologia">Tecnología</a>
     <a href="#cultura">Cultura</a>
+    <a href="#deportes">Deportes</a>
   </nav>
 
   <div class="container">
 
-    <!-- Sección España -->
-    <h2 id="espana" class="section-title">España</h2>
-    <div class="news-grid">
-      <div class="news-card">
-        <img src="https://via.placeholder.com/600x400.png?text=España+1" alt="España noticia 1">
-        <div class="news-card-content">
-          <h3>Medidas económicas para pymes aprobadas hoy</h3>
-          <p>El gobierno ha anunciado un nuevo paquete de apoyo para pequeñas y medianas empresas con incentivos fiscales y subvenciones directas.</p>
+    <!-- Sección destacada -->
+    <div class="featured">
+      <div class="main-article">
+        <img src="https://via.placeholder.com/800x400.png?text=Noticia+Principal" alt="Noticia Principal">
+        <div class="content">
+          <h2>España aprueba nuevas medidas para impulsar la economía y las pymes</h2>
+          <p>El Gobierno ha anunciado un ambicioso plan de ayudas fiscales, subvenciones y apoyo directo a las pequeñas y medianas empresas para mejorar la recuperación económica tras la crisis reciente. Las medidas incluyen incentivos para la innovación, financiación blandita y reducción de cargas.</p>
         </div>
       </div>
-      <div class="news-card">
-        <img src="https://via.placeholder.com/600x400.png?text=España+2" alt="España noticia 2">
-        <div class="news-card-content">
-          <h3>Alta participación en elecciones locales</h3>
-          <p>El 78% del censo ha acudido a votar en las elecciones municipales, marcando un récord de participación.</p>
+      <div class="side-articles">
+        <div class="side-article">
+          <img src="https://via.placeholder.com/120.png?text=Pol%C3%ADtica" alt="Política">
+          <div class="text">
+            <h3>Alta participación en elecciones locales</h3>
+            <p>Más del 77 % del censo ha votado en las elecciones municipales, marcando un récord de movilización ciudadana.</p>
+          </div>
+        </div>
+        <div class="side-article">
+          <img src="https://via.placeholder.com/120.png?text=Internacional" alt="Internacional">
+          <div class="text">
+            <h3>Cumbre del cambio climático cierra con compromisos renovados</h3>
+            <p>Los países firmantes han acordado metas más ambiciosas de reducción de emisiones, con planes concretos para 2030.</p>
+          </div>
         </div>
       </div>
     </div>
 
+    <!-- Anuncio principal -->
     <div class="ads">
       <ins class="adsbygoogle"
         style="display:block"
         data-ad-client="ca-pub-8304147426201412"
-        data-ad-slot="1111111111"
+        data-ad-slot="5555555555"
         data-ad-format="auto"
         data-full-width-responsive="true"></ins>
       <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
 
-    <!-- Sección Internacional -->
-    <h2 id="internacional" class="section-title">Internacional</h2>
-    <div class="news-grid">
-      <div class="news-card">
-        <img src="https://via.placeholder.com/600x400.png?text=Internacional+1" alt="Internacional noticia 1">
-        <div class="news-card-content">
-          <h3>Cumbre mundial sobre cambio climático concluye con acuerdos clave</h3>
-          <p>Tras varios días de negociaciones, los países firmantes han acordado metas más ambiciosas sobre reducción de emisiones.</p>
+    <!-- Noticias por sección -->
+
+    <div class="section" id="espana">
+      <h2 class="section-title">España</h2>
+      <div class="news-grid">
+        <div class="news-card">
+          <img src="https://via.placeholder.com/400x200.png?text=España+Medidas" alt="España Medidas">
+          <div class="content">
+            <h3>Programa de apoyo a emprendedores y pymes</h3>
+            <p>Se ha lanzado un nuevo mecanismo para fomentar la creación de empresas con ayudas a la inversión, reducciones fiscales para los autónomos y líneas de crédito blandas.</p>
+          </div>
         </div>
-      </div>
-      <div class="news-card">
-        <img src="https://via.placeholder.com/600x400.png?text=Internacional+2" alt="Internacional noticia 2">
-        <div class="news-card-content">
-          <h3>Tensiones geopolíticas aumentan en la región del Pacífico</h3>
-          <p>Varios países han mostrado preocupación por los recientes movimientos militares en la zona, generando alarma internacional.</p>
+        <div class="news-card">
+          <img src="https://via.placeholder.com/400x200.png?text=España+Elecciones" alt="España Elecciones">
+          <div class="content">
+            <h3>Participación récord en las elecciones municipales</h3>
+            <p>El índice de participación ha superado las expectativas, con un fuerte compromiso ciudadano en las urnas y un aumento en la participación joven.</p>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="ads">
-      <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-8304147426201412"
-        data-ad-slot="2222222222"
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
-
-    <!-- Sección Economía -->
-    <h2 id="economia" class="section-title">Economía</h2>
-    <div class="news-grid">
-      <div class="news-card">
-        <img src="https://via.placeholder.com/600x400.png?text=Econom%C3%ADa+1" alt="Economía noticia 1">
-        <div class="news-card-content">
-          <h3>Mercados bursátiles muestran recuperación</h3>
-          <p>Tras semanas de caída, los índices principales han mostrado un repunte gracias a la confianza renovada de los inversores.</p>
+    <div class="section" id="internacional">
+      <h2 class="section-title">Internacional</h2>
+      <div class="news-grid">
+        <div class="news-card">
+          <img src="https://via.placeholder.com/400x200.png?text=Cumbre+Clima" alt="Cumbre Clima">
+          <div class="content">
+            <h3>Compromiso global renovado en la cumbre del clima</h3>
+            <p>Los líderes mundiales han firmado nuevos acuerdos para cumplir objetivos más ambiciosos en la lucha contra el cambio climático y proteger ecosistemas vulnerables.</p>
+          </div>
         </div>
-      </div>
-      <div class="news-card">
-        <img src="https://via.placeholder.com/600x400.png?text=Econom%C3%ADa+2" alt="Economía noticia 2">
-        <div class="news-card-content">
-          <h3>Aumenta el salario mínimo en España</h3>
-          <p>El gobierno ha aprobado un incremento del salario mínimo interprofesional para el próximo año, beneficiando a miles de trabajadores.</p>
+        <div class="news-card">
+          <img src="https://via.placeholder.com/400x200.png?text=Tensiones+Internacionales" alt="Tensiones Internacionales">
+          <div class="content">
+            <h3>Tensiones geopolíticas en aumento en el Pacífico</h3>
+            <p>El escenario internacional se complica con la intensificación de maniobras militares y disputas territoriales en una de las zonas más conflictivas.</p>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="ads">
-      <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-8304147426201412"
-        data-ad-slot="3333333333"
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
-
-    <!-- Sección Tecnología -->
-    <h2 id="tecnologia" class="section-title">Tecnología</h2>
-    <div class="news-grid">
-      <div class="news-card">
-        <img src="https://via.placeholder.com/600x400.png?text=Tecnolog%C3%ADa+1" alt="Tecnología noticia 1">
-        <div class="news-card-content">
-          <h3>IA puntera desarrollada por empresa española</h3>
-          <p>La nueva inteligencia artificial promete mejorar la eficiencia en el sector industrial con algoritmos avanzados.</p>
+    <div class="section" id="economia">
+      <h2 class="section-title">Economía</h2>
+      <div class="news-grid">
+        <div class="news-card">
+          <img src="https://via.placeholder.com/400x200.png?text=Econom%C3%ADa+Mercados" alt="Economía Mercados">
+          <div class="content">
+            <h3>Recuperación de los mercados bursátiles</h3>
+            <p>Los principales índices han registrado subidas después de una fase de inestabilidad, alentados por expectativas de políticas de estímulo y crecimiento.</p>
+          </div>
         </div>
-      </div>
-      <div class="news-card">
-        <img src="https://via.placeholder.com/600x400.png?text=Tecnolog%C3%ADa+2" alt="Tecnología noticia 2">
-        <div class="news-card-content">
-          <h3>Innovación en energía renovable: paneles inteligentes</h3>
-          <p>Los nuevos paneles solares con sensores automáticos optimizan la producción energética según la luz y el clima.</p>
+        <div class="news-card">
+          <img src="https://via.placeholder.com/400x200.png?text=Econom%C3%ADa+Salario" alt="Economía Salario">
+          <div class="content">
+            <h3>Incremento del salario mínimo interprofesional</h3>
+            <p>El salario mínimo se eleva para 2025, con el objetivo de mejorar la calidad de vida de los trabajadores más vulnerables y estimular la demanda interna.</p>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="ads">
-      <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-8304147426201412"
-        data-ad-slot="4444444444"
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
-
-    <!-- Sección Cultura -->
-    <h2 id="cultura" class="section-title">Cultura</h2>
-    <div class="news-grid">
-      <div class="news-card">
-        <img src="https://via.placeholder.com/600x400.png?text=Cultura+1" alt="Cultura noticia 1">
-        <div class="news-card-content">
-          <h3>Gran exposición de arte contemporáneo en Madrid</h3>
-          <p>Una nueva galería abrirá sus puertas con obras de artistas emergentes y consagrados en un espacio moderno.</p>
+    <div class="section" id="tecnologia">
+      <h2 class="section-title">Tecnología</h2>
+      <div class="news-grid">
+        <div class="news-card">
+          <img src="https://via.placeholder.com/400x200.png?text=IA+revolucionaria" alt="IA revolucionaria">
+          <div class="content">
+            <h3>Startup española lanza IA para la industria manufacturera</h3>
+            <p>Una nueva inteligencia artificial busca optimizar procesos productivos en fábricas, reducir costes y automatizar tareas repetitivas con gran eficiencia.</p>
+          </div>
+        </div>
+        <div class="news-card">
+          <img src="https://via.placeholder.com/400x200.png?text=Paneles+Solares" alt="Paneles solares">
+          <div class="content">
+            <h3>Paneles solares inteligentes mejoran la eficiencia energética</h3>
+            <p>La tecnología fotovoltaica da un paso adelante con paneles que adaptan su inclinación y producción según la radiación y condiciones climáticas.</p>
+          </div>
         </div>
       </div>
-      <div class="news-card">
-        <img src="https://via.placeholder.com/600x400.png?text=Cultura+2" alt="Cultura noticia 2">
-        <div class="news-card-content">
-          <h3>Festival de música clásica reunirá a grandes maestros</h3>
-          <p>El festival contará con orquestas internacionales y conciertos al aire libre en emblemáticos auditorios.</p>
+    </div>
+
+    <div class="section" id="cultura">
+      <h2 class="section-title">Cultura</h2>
+      <div class="news-grid">
+        <div class="news-card">
+          <img src="https://via.placeholder.com/400x200.png?text=Exposici%C3%B3n+Arte" alt="Exposición Arte">
+          <div class="content">
+            <h3>Gran exposición de arte contemporáneo abre en Madrid</h3>
+            <p>Artistas emergentes y consagrados muestran sus obras en una exposición que combina pintura, fotografía y nuevas tecnologías.</p>
+          </div>
+        </div>
+        <div class="news-card">
+          <img src="https://via.placeholder.com/400x200.png?text=Festival+Cine" alt="Festival Cine">
+          <div class="content">
+            <h3>Festival internacional de cine en Barcelona</h3>
+            <p>El festival presenta películas independientes, sesiones al aire libre y debates con directores destacados de diferentes países.</p>
+          </div>
         </div>
       </div>
     </div>
